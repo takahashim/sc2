@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     redirect_to root_path, notice: "ログインしました"
   end
+  
+  def failure
+    redirect_to root_path, notice: "ログインに失敗しました"
+  end
 
   def destroy
     session[:user_id] = nil
