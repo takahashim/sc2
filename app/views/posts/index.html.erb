@@ -1,0 +1,16 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<%= render :partial => 'form' %>
+
+<div>
+  <% @posts.reverse_each do |post| %>
+  <div class="well well-lg">
+  <b><%= post.user.name%>:</b>
+  <%= post.comment %>
+        (<%=l post.created_at %>)
+  </div>
+  <% end %>
+</div>

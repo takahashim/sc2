@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+
   get 'sessions/create'
 
   get 'sessions/destroy'
