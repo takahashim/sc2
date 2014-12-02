@@ -1,0 +1,10 @@
+<h1><%= @user.name %>さん</h1>
+<div>
+  <% @posts.where(user: @user).reverse_each do |post| %>
+  <div class="well well-lg">
+  <b><%= post.user.name%>:</b>
+  <%= post.comment %>
+        (<%=l post.created_at %>)
+  </div>
+  <% end %>
+</div>
